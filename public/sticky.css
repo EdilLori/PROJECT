@@ -1,0 +1,18 @@
+ div.sticky {
+      width: 20px; /* Larghezza del div */
+      height: 100px; /* Altezza del div per contenere il testo */
+      position: -webkit-sticky;
+      position: sticky;
+      top: 3%; /* Distanza dalla parte superiore della finestra */
+      right: 0; /* Allineamento al lato destro */
+      background-color: #1EAFEF;
+      padding: 10px;
+      font-size: 16px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      writing-mode: vertical-lr; /* Rotazione del testo verticale */
+      text-orientation: mixed;
+      transform: translateX(97vw);
+ }

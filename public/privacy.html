@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Politica sulla Privacy - Edil Lori</title>
+<style>
+.button,
+.input,
+.select,
+.textarea {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+.modal-container {
+  max-height: 600px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 600px) {
+  .modal-container {
+    width: 90%;
+  }
+}
+
+.modal-container-header {
+  padding: 16px 32px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modal-container-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  line-height: 1;
+  font-weight: 700;
+  font-size: 1.125;
+}
+
+.modal-container-title svg {
+  width: 32px;
+  height: 32px;
+  color: #750550;
+}
+
+.modal-container-body {
+  padding: 24px 32px 51px;
+  overflow-y: auto;
+}
+
+.rtf h1,
+.rtf h2,
+.rtf h3,
+.rtf h4,
+.rtf h5,
+.rtf h6 {
+  font-weight: 700;
+}
+
+.rtf h1 {
+  font-size: 1.5rem;
+  line-height: 1.125;
+}
+
+.rtf h2 {
+  font-size: 1.25rem;
+  line-height: 1.25;
+}
+
+.rtf h3 {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.rtf > * + * {
+  margin-top: 1em;
+}
+
+.rtf > * + :is(h1, h2, h3) {
+  margin-top: 2em;
+}
+
+.rtf > :is(h1, h2, h3) + * {
+  margin-top: 0.75em;
+}
+
+.rtf ul,
+.rtf ol {
+  margin-left: 20px;
+  list-style-position: inside;
+}
+
+.rtf ol {
+  list-style: numeric;
+}
+
+.rtf ul {
+  list-style: disc;
+}
+
+.modal-container-footer {
+  padding: 20px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border-top: 1px solid #ddd;
+  gap: 12px;
+  position: relative;
+}
+
+.modal-container-footer:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -51px;
+  left: 24px;
+  right: 24px;
+  height: 50px;
+  flex-shrink: 0;
+  background-image: linear-gradient(to top, rgba(255, 255, 255, 0.75), transparent);
+  pointer-events: none;
+}
+
+.button {
+  padding: 12px 20px;
+  border-radius: 8px;
+  background-color: transparent;
+  border: 0;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.15s ease;
+}
+
+.button.is-ghost:hover, .button.is-ghost:focus {
+  background-color: #dfdad7;
+}
+
+.button.is-primary {
+  background-color: #750550;
+  color: #fff;
+}
+
+.button.is-primary:hover, .button.is-primary:focus {
+  background-color: #4a0433;
+}
+
+.icon-button {
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: 0.15s ease;
+}
+
+.icon-button svg {
+  width: 24px;
+  height: 24px;
+}
+
+.icon-button:hover, .icon-button:focus {
+  background-color: #dfdad7;
+}
+
+a {
+  text-decoration: none;
+}
+
+.lumanosimo-regular {
+  font-family: "Lumanosimo", cursive;
+  font-style: normal;
+}
+ * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+
+.slidr {
+    overflow: hidden;
+    width: 100%;
+    height: 70vh;
+    position: relative;
+}
+
+.slidr .slid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    animation: slider 15s infinite;
+}
+
+.slidr .slid::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.slidr .slid:nth-child(1) {
+  background-image: url('img1.jpg');
+  animation-delay: -0s;
+}
+
+.slidr .slid:nth-child(2) {
+  background-image: url('img2.jpg');
+  animation-delay: -3s;
+}
+
+.slidr .slid:nth-child(3) {
+  background-image: url('img3.jpg');
+  animation-delay: -6s;
+}
+
+.slidr .slid:nth-child(4) {
+  background-image: url('img4.jpg');
+  animation-delay: -9s;
+}
+
+.slidr .slid:nth-child(5) {
+  background-image: url('img5.jpg');
+  animation-delay: -12s;
+}
+
+@keyframes slider {
+  0%, 13%, 100% {
+    opacity: 1;
+    animation-timing-function: ease;
+    z-index: -1;
+  }
+  20% {
+    opacity: 0;
+    animation-timing-function: step-end;
+    z-index: -1;
+  }
+  93% {
+    opacity: 1;
+    animation-timing-function: step-end;
+    z-index: -1;
+  }
+}
+
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lumanosimo&display=swap" rel="stylesheet">
+</head>
+<font face="Roboto">
+<body bgcolor="#0E230E">
+<br>
+<header>
+	<div class="slidr">
+	<div class="slid"></div>
+	<div class="slid"></div>
+	<div class="slid"></div>
+	<div class="slid"></div>
+    <div class="slid"></div>
+	<table width="100%">
+	<tr>
+	<center>
+	<td>
+	<font color="white" size="9">
+	<br><br><br><br>
+	<p><h1><center><div class="lumanosimo-regular">EDIL LORI di Lori Artan</div></center></h1><p></font></td>
+	</tr>
+	</table>
+	</header>
+	<br><br><br><br><br><br>
+	<main>
+<div class="modal">
+	<article class="modal-container">
+		<header class="modal-container-header">
+			<span class="modal-container-title">
+				<svg aria-hidden="true" height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+					<path d="M0 0h24v24H0z" fill="none"></path>
+					<path d="M14 9V4H5v16h6.056c.328.417.724.785 1.18 1.085l1.39.915H3.993A.993.993 0 0 1 3 21.008V2.992C3 2.455 3.449 2 4.002 2h10.995L21 8v1h-7zm-2 2h9v5.949c0 .99-.501 1.916-1.336 2.465L16.5 21.498l-3.164-2.084A2.953 2.953 0 0 1 12 16.95V11zm2 5.949c0 .316.162.614.436.795l2.064 1.36 2.064-1.36a.954.954 0 0 0 .436-.795V13h-5v3.949z" fill="currentColor"></path>
+				</svg>
+				Politica sulla Privacy
+			</span>
+			<a href="Pagina_1.html"><button class="icon-button">
+				<svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+					<path d="M0 0h24v24H0z" fill="none"></path>
+					<path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z" fill="currentColor"></path>
+				</svg>
+			</button></a>
+		</header>
+		<section class="modal-container-body rtf">
+<p><b>Privacy Policy</b></p>
+<pre>
+<font face="Roboto">
+Introduzione
+Edil Lori si impegna a proteggere la privacy dei visitatori del proprio sito web. La presente Privacy Policy spiega come raccogliamo, utilizziamo e proteggiamo le informazioni personali degli utenti in conformità con il Regolamento Generale sulla Protezione dei Dati (GDPR) e la normativa italiana in materia di protezione dei dati personali.
+
+Titolare del trattamento
+Il titolare del trattamento è Edil Lori, con sede in Donnas, Italia. Per qualsiasi domanda riguardante la presente Privacy Policy o il trattamento dei dati personali, l'utente può contattare Edil Lori all'indirizzo email: edillori07@gmail.com.
+
+Tipi di dati raccolti
+- Dati di navigazione: Informazioni raccolte automaticamente durante la navigazione sul sito, come indirizzo IP, tipo di browser, pagine visitate e tempi di visita.
+- Dati forniti volontariamente dall'utente: Informazioni personali fornite dall'utente tramite moduli di contatto, iscrizione alla newsletter o altre interazioni con il sito.
+
+Finalità del trattamento
+- Esecuzione del servizio: Utilizziamo i dati personali per fornire i servizi richiesti dall'utente, rispondere alle richieste e comunicare con l'utente.
+- Analisi e miglioramento del sito: Analizziamo i dati di navigazione per migliorare il funzionamento del sito e l'esperienza dell'utente.
+- Marketing: Con il consenso dell'utente, utilizziamo i dati per inviare comunicazioni promozionali e aggiornamenti sui nostri servizi.
+
+Base giuridica del trattamento
+Trattiamo i dati personali dell'utente in base alle seguenti basi giuridiche:
+- Consenso: L'utente ha prestato il proprio consenso al trattamento dei propri dati personali per una o più specifiche finalità.
+- Esecuzione di un contratto: Il trattamento è necessario per l'esecuzione di un contratto di cui l'utente è parte o per l'esecuzione di misure precontrattuali adottate su richiesta dell'utente.
+- Obblighi legali: Il trattamento è necessario per adempiere a un obbligo legale al quale siamo soggetti.
+- Interesse legittimo: Il trattamento è necessario per il perseguimento di un legittimo interesse del titolare del trattamento o di terzi, a condizione che non prevalgano i diritti e le libertà fondamentali dell'utente.
+
+Conservazione dei dati
+Conserviamo i dati personali dell'utente per il tempo necessario a soddisfare le finalità per cui sono stati raccolti e in conformità con gli obblighi legali applicabili.
+
+Diritti dell'utente
+L'utente ha il diritto di:
+- Accedere ai propri dati personali e richiedere una copia degli stessi.
+- Richiedere la rettifica o la cancellazione dei propri dati personali.
+- Opporsi al trattamento dei propri dati personali.
+- Richiedere la limitazione del trattamento dei propri dati personali.
+- Richiedere la portabilità dei propri dati personali.
+- Revocare il consenso al trattamento dei propri dati personali, senza pregiudicare la liceità del trattamento basata sul consenso prima della revoca.
+
+Per esercitare i propri diritti, l'utente può contattare Edil Lori all'indirizzo email: edillori07@gmail.com.
+
+Sicurezza dei dati
+Adottiamo misure tecniche e organizzative adeguate per proteggere i dati personali dell'utente da accessi non autorizzati, perdita, distruzione o alterazione.
+
+Modifiche alla Privacy Policy
+Edil Lori si riserva il diritto di modificare la presente Privacy Policy in qualsiasi momento. Eventuali modifiche saranno pubblicate su questa pagina con una data di aggiornamento.
+
+Contatti
+Per ulteriori informazioni o domande riguardanti la presente Cookies Policy e Privacy Policy, l'utente può contattare Edil Lori all'indirizzo email: edillori07@gmail.com.
+</pre>
+		</section>
+	</article>
+</div>
+	</main>
+	<footer>
+	<br><br><br>
+	<table width="100%">
+	<tr>
+	<center>
+	<a href="Pagina_1.html">
+	<svg width="70px" height="70px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 12H18M6 12L11 7M6 12L11 17" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+	</a>
+	</center>
+	<td>
+	</td>
+	</tr>
+	</table>
+	<br><br><br>
+	</footer>
+</body>
+</html>
