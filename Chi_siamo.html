@@ -1,0 +1,321 @@
+<html>
+<head>
+<title>Edil Lori di Lori Artan</title>
+<style>
+ * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+
+.slidr {
+    overflow: hidden;
+    width: 100%;
+    height: 70vh;
+    position: relative;
+}
+
+.slidr .slid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    animation: slider 15s infinite;
+}
+
+.slidr .slid::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.slidr .slid:nth-child(1) {
+  background-image: url('img1.jpg');
+  animation-delay: -0s;
+}
+
+.slidr .slid:nth-child(2) {
+  background-image: url('img2.jpg');
+  animation-delay: -3s;
+}
+
+.slidr .slid:nth-child(3) {
+  background-image: url('img3.jpg');
+  animation-delay: -6s;
+}
+
+.slidr .slid:nth-child(4) {
+  background-image: url('img4.jpg');
+  animation-delay: -9s;
+}
+
+.slidr .slid:nth-child(5) {
+  background-image: url('img5.jpg');
+  animation-delay: -12s;
+}
+
+@keyframes slider {
+  0%, 13%, 100% {
+    opacity: 1;
+    animation-timing-function: ease;
+    z-index: -1;
+  }
+  20% {
+    opacity: 0;
+    animation-timing-function: step-end;
+    z-index: -1;
+  }
+  93% {
+    opacity: 1;
+    animation-timing-function: step-end;
+    z-index: -1;
+  }
+}
+
+
+
+button {
+  --color: #306C30;
+  font-family: inherit;
+  width: auto;
+  height: 2.6em;
+  line-height: 2.5em;
+  padding: 0 1em;
+  display: inline-block;
+  overflow: hidden;
+  cursor: pointer;
+  margin: 20px;
+  font-size: 17px;
+  z-index: 1;
+  color: var(--color);
+  border: 2px solid var(--color);
+  border-radius: 6px;
+  position: relative;
+  white-space: nowrap;
+}
+
+button::before {
+  position: absolute;
+  content: "";
+  background: var(--color);
+  width: 450px;
+  height: 100px;
+  z-index: -1;
+  border-radius: 100%;
+}
+
+button:hover {
+  color: white;
+}
+
+button::before {
+  top: 100%;
+  left: 100%;
+  transition: 0.3s all;
+}
+
+button:hover::before {
+  top: -30px;
+  left: -30px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.box3{
+ position:relative;
+ top:60;
+}
+
+.box4{
+ position:relative;
+ top:30;
+}
+
+.box5{
+ position:relative;
+left:10;
+}
+
+
+.lumanosimo-regular {
+  font-family: "Lumanosimo", cursive;
+  font-style: normal;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+  .gallery img {
+    width: calc(100% / 2 - 20px); /* 2 immagini per fila con 20px di margine */
+  }
+}
+.gallery-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.gallery {
+  display: flex;
+  transition: transform 1s ease;
+}
+
+.gallery img {
+  width: calc(100% / 5 - 20px); /* 5 immagini per fila con 20px di margine */
+  height: auto;
+  margin-right: 20px;
+  object-fit: cover;
+}
+
+a {
+  text-decoration: none;
+}
+.lumanosimo-regular {
+  font-family: "Lumanosimo", cursive;
+  font-style: normal;
+}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lumanosimo&display=swap" rel="stylesheet">
+</head>
+<font face="Roboto">
+<body bgcolor="#0E230E">
+<br>
+<header>
+	<div class="slidr">
+	<div class="slid"></div>
+	<div class="slid"></div>
+	<div class="slid"></div>
+	<div class="slid"></div>
+    <div class="slid"></div>
+	<table width="100%">
+	<tr>
+	<center>
+	<td>
+	<font color="white" size="9">
+	<br><br><br>
+	<p><h1><center><div class="lumanosimo-regular">EDIL LORI di Lori Artan</div></center></h1><p></font><br><br><br><br><br>
+	<font color="white" size="6">
+	<center>
+	<p><a href="#contattaci"><button>Contattaci</button></a></p>
+	</center>
+	</td>
+	</tr>
+	</table>
+	</header>
+	<main>
+	<center>
+	<br><br><br><br>
+	<table width="50%">
+	<font color="white" size="4">
+	<tr>
+	<td> <font color="white" size="4">
+	<p>L'azienda Edil Lori, operante con sede a Donnas e attiva dal 2007, rappresenta un pilastro nel settore dell'edilizia in Valle d'Aosta e oltre. Specializzata nella realizzazione di progetti edilizi di ogni dimensione, Edil Lori si distingue per un'impeccabile reputazione costruita su decenni di esperienza e dedizione.
+
+</p><br><p>Il team di Edil Lori, guidato dai fratelli Lori, unisce conoscenze approfondite delle più avanzate tecniche e tecnologie nel campo dell'edilizia. Con un servizio clienti impeccabile e una vasta gamma di materiali edili di alta qualità, Edil Lori si impegna a garantire soluzioni costruttive affidabili e durature.
+
+</p><br><p>Operando con un forte impegno verso la sostenibilità ambientale, Edil Lori seleziona attentamente i migliori materiali e tecnologie disponibili sul mercato, assicurando non solo la funzionalità e l'eleganza delle strutture costruite, ma anche il rispetto per l'ambiente.
+
+</p><br><p>Che si tratti di progetti residenziali, commerciali o industriali, Edil Lori è il partner ideale per realizzare le vostre visioni architettoniche con precisione e qualità senza compromessi. Con una solida presenza non solo in Valle d'Aosta ma anche oltre i confini regionali, Edil Lori si conferma come un leader nel panorama dell'edilizia, combinando tradizione, innovazione e affidabilità.
+	</p><td>
+	</tr>
+	</font>
+	</table>
+	</center>
+	<br><br><br><br>
+<table width="100%">
+<tr>
+<td>  
+<div class="gallery-container">
+        <div class="gallery">
+<img src="IMG/1.jpg" alt="Image 1"></img>
+<img src="IMG/2.jpg" alt="Image 2"></img>
+<img src="IMG/3.jpg" alt="Image 3"></img>
+<img src="IMG/4.jpg" alt="Image 4"></img>
+<img src="IMG/5.jpg" alt="Image 5"></img>
+<img src="IMG/6_ritaglio.jpg" alt="Image 6"></img>
+<img src="IMG/7.jpg" alt="Image 7"></img>
+<img src="IMG/8.jpg" alt="Image 8"></img>
+<img src="IMG/10.jpg" alt="Image 9"></img>
+</div>
+</div>
+</td>
+</tr>
+</table>
+	</main>
+	<footer>
+	<br><br><br>
+	<a name="contattaci"><table width="90%">
+	<tr>
+	<td>
+	<center>
+	<p><font color="white" size="5">Posizione</font></p>
+	<br>
+	<div class="box5"><p><font color="white" size="4">Via Clapey, 233 || 11020 Donnas (Ao)</font></p></div></center>
+	</td>
+	<td><center>
+	<div class="box3"><p><font color="white" size="5">Orari</font></p></div>
+	<br><br><br><br><br>
+	<div class="box5"><p><font color="white" size="4">Dal Lun al Ven: 6-12 || 13-19</font></p>
+	<p><font color="white" size="4">Sabato: 6-12</font></p>
+	<p><font color="white" size="4">Domenica chiuso</font></p></div></center>
+	</td>
+	<td><center>
+	<div class="box4"><p><font color="white" size="5">Contatto</font></p></div>
+	<br><br><br>
+	<div class="box5"><p><font color="white" size="4">Cellulare: +39 340 602 3914</font></p>
+	<p><font color="white" size="4">Email: edillori07@gmail.com</font></p></div></center>
+	</td>
+	</tr>
+	</table></a>
+	<br><br><br>
+	<table width="100%">
+	<tr>
+	<center><a href="Pagina_1.html">
+	<svg width="70px" height="70px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 12H18M6 12L11 7M6 12L11 17" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+	</a></center>
+	<td>
+	</td>
+	</tr>
+	<br><br><br>
+	<table width="100%" bgcolor="#515151">
+	<tr>
+	<td>
+	<center>
+	<font face="Inter" color="white" size="4"><pre>P.I. 01106910076 | <a href="Privacy.html"><font face="Inter" color="white" size="4">Privacy Policy</a> | <a href="cookies.html"><font face="Inter" color="white" size="4">Cookie Policy</a></pre></font>
+	</center>
+	</td>
+	</tr>
+	</table>
+	</footer>
+		<script src="galleria.js"></script>
+	 <script>
+    document.getElementById('openFormBtn').addEventListener('click', function() {
+      document.getElementById('overlay').style.display = 'block';
+      document.getElementById('form-container').style.display = 'block';
+    });
+
+    document.getElementById('overlay').addEventListener('click', function() {
+      document.getElementById('overlay').style.display = 'none';
+      document.getElementById('form-container').style.display = 'none';
+    });
+  </script>
+	</body>
+	</html>
