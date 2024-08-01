@@ -91,7 +91,7 @@ body {
 
 
 
-button {
+.button {
   --color: #306C30;
   font-family: inherit;
   width: auto;
@@ -111,7 +111,7 @@ button {
   white-space: nowrap;
 }
 
-button::before {
+.button::before {
   position: absolute;
   content: "";
   background: var(--color);
@@ -121,11 +121,11 @@ button::before {
   border-radius: 100%;
 }
 
-button:hover {
+.button:hover {
   color: white;
 }
 
-button::before {
+.button::before {
   top: 100%;
   left: 100%;
   transition: 0.3s all;
@@ -446,7 +446,7 @@ a {
 	</td>
 	<td width="33%">
 	<center>
-<button id="openFormBtn" onclick="showAlert()">Richiedi un preventivo</button>
+<button class="button" id="openFormBtn" onclick="showAlert()">Richiedi un preventivo</button>
 	</center>
 	</td>
 	</tr>
@@ -469,7 +469,7 @@ a {
 	<br><br><p><center>Costruiamo i vostri sogni, mattoni su mattoni. Affidatevi a noi per qualità, precisione e innovazione in ogni progetto</center><p></font>
 	<br><br>
 	<center>
-	<p><a href="#contatti"><button>Contattaci</button></a></p>
+	<p><a href="#contatti"><button class="button">Contattaci</button></a></p>
 	</center>
 	</td>
 	</tr>
