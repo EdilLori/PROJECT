@@ -239,142 +239,6 @@ html {
   }
 }
 
-#openFormBtn {
-  font-family: inherit;
-  padding: 0 1em;
-  font-size: 16px;
-  cursor: pointer;
-  border: 2px solid #306C30;
-  border-radius: 6px;
-  background-color: white;
-  color: #306C30;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-#openFormBtn:hover {
-  background-color: #306C30;
-  color: white;
-}
-
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 999;
-  display: none;
-}
-
-.form-container {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1000;
-  display: none;
-}
-
-.form {
-  display: flex;
-  flex-direction: column;
-  align-self: center;
-  font-family: inherit;
-  gap: 10px;
-  padding-inline: 2em;
-  padding-bottom: 0.4em;
-  background-color: #171717;
-  border-radius: 20px;
-}
-
-.form-heading {
-  text-align: center;
-  margin: 2em;
-  color: #29B329;
-  font-size: 1.2em;
-  background-color: transparent;
-  align-self: center;
-}
-
-.form-field {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5em;
-  border-radius: 10px;
-  padding: 0.6em;
-  border: none;
-  outline: none;
-  color: white;
-  background-color: #171717;
-  box-shadow: inset 2px 5px 10px rgb(5, 5, 5);
-}
-
-.input-field {
-  background: none;
-  border: none;
-  outline: none;
-  width: 100%;
-  color: #ccd6f6;
-  padding-inline: 1em;
-}
-
-.sendMessage-btn {
-  cursor: pointer;
-  margin-bottom: 3em;
-  padding: 0 1em;
-  border-radius: 10px;
-  border: none;
-  outline: none;
-  background-color: transparent;
-  color: #29B329;
-  font-weight: bold;
-  outline: 2px solid #29B329;
-}
-
-.sendMessage-btn:hover {
-  background-color: #29B329;
-  color: black;
-}
-
-.form-bottom {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 2em;
-  padding: 0.2em;
-}
-
-.form-bottom::before,
-.form-bottom::after {
-  content: "";
-  flex: 1 1;
-  border-bottom: 2px solid #29B329;
-  margin: auto;
-}
-
-.form-card1 {
-  background-image: linear-gradient(163deg, #29B329 0%, #218021 100%);
-  border-radius: 22px;
-  transition: all 0.3s;
-}
-
-.form-card1:hover {
-  box-shadow: 0px 0px 30px 1px rgba(17, 246, 17, 0.3);
-}
-
-.form-card2 {
-  border-radius: 0;
-  transition: all 0.2s;
-}
-
-.form-card2:hover {
-  transform: scale(0.98);
-  border-radius: 20px;
-}
-
-
 .servizi{
 position:relative;
 top:-150;
@@ -430,6 +294,18 @@ a {
   color: #306C30;
   transition: background-color 0.3s, color 0.3s;
   cursor: not-allowed;
+}
+
+#openFormBtn {
+  font-family: inherit;
+  padding: 0 1em;
+  font-size: 16px;
+  cursor: pointer;
+  border: 2px solid #306C30;
+  border-radius: 6px;
+  background-color: white;
+  color: #306C30;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 #openFormBtn:hover {
@@ -580,12 +456,14 @@ a {
 	</td>
 	<td width="33%">
 	<center>
-<button class="button" id="openFormBtn">Richiedi un preventivo</button>
-	<div id="overlay" class="overlay"></div>
-		<div id="formContainer" class="form-container">
+<button id="openFormBtn">Richiedi un preventivo</button>
+
+<div id="overlay" class="overlay"></div>
+
+<div id="formContainer" class="form-container">
     <div class="form-card1">
         <div class="form-card2">
-            <form class="form" form name="contact" method="POST" data-netlify="true">
+            <form class="form" name="contact" method="POST" data-netlify="true">
                 <p class="form-heading">Richiedi un preventivo</p>
                 <div class="form-field">
                     <input required="" placeholder="Nome e Cognome" class="input-field" type="text" name="nome_cognome" />
@@ -742,7 +620,6 @@ a {
 <script>
 document.addEventListener("DOMContentLoaded", function() {
     var openFormBtn = document.getElementById("openFormBtn");
-    var closeFormBtn = document.getElementById("closeFormBtn");
     var overlay = document.getElementById("overlay");
     var formContainer = document.getElementById("formContainer");
 
@@ -751,14 +628,11 @@ document.addEventListener("DOMContentLoaded", function() {
         formContainer.style.display = "block";
     });
 
-    closeFormBtn.addEventListener("click", function() {
-        overlay.style.display = "none";
-        formContainer.style.display = "none";
-    });
-
-    overlay.addEventListener("click", function() {
-        overlay.style.display = "none";
-        formContainer.style.display = "none";
+    overlay.addEventListener("click", function(event) {
+        if (event.target === overlay) {
+            overlay.style.display = "none";
+            formContainer.style.display = "none";
+        }
     });
 });
 </script>
