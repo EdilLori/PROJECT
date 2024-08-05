@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
     var openFormBtn = document.getElementById("openFormBtn");
-    var closeFormBtn = document.getElementById("closeFormBtn");
     var overlay = document.getElementById("overlay");
     var formContainer = document.getElementById("formContainer");
 
@@ -9,13 +8,10 @@ document.addEventListener("DOMContentLoaded", function() {
         formContainer.style.display = "block";
     });
 
-    closeFormBtn.addEventListener("click", function() {
-        overlay.style.display = "none";
-        formContainer.style.display = "none";
-    });
-
-    overlay.addEventListener("click", function() {
-        overlay.style.display = "none";
-        formContainer.style.display = "none";
+    overlay.addEventListener("click", function(event) {
+        if (event.target === overlay) {
+            overlay.style.display = "none";
+            formContainer.style.display = "none";
+        }
     });
 });
