@@ -305,17 +305,35 @@ a {
 	</tr>
 	</table>
 	</footer>
-		<script src="galleria.js"></script>
-	 <script>
-    document.getElementById('openFormBtn').addEventListener('click', function() {
-      document.getElementById('overlay').style.display = 'block';
-      document.getElementById('form-container').style.display = 'block';
+	<script src="form.js"></script>
+	<script src="galleria.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    var openFormBtn = document.getElementById("openFormBtn");
+    var overlay = document.getElementById("overlay");
+    var formContainer = document.getElementById("formContainer");
+
+    openFormBtn.addEventListener("click", function() {
+        overlay.style.display = "block";
+        formContainer.style.display = "block";
     });
 
-    document.getElementById('overlay').addEventListener('click', function() {
-      document.getElementById('overlay').style.display = 'none';
-      document.getElementById('form-container').style.display = 'none';
+    overlay.addEventListener("click", function(event) {
+        if (event.target === overlay) {
+            overlay.style.display = "none";
+            formContainer.style.display = "none";
+        }
     });
+});
   </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Imposta la larghezza del viewport a 1024 per forzare la modalità desktop
+      var metaViewport = document.querySelector("meta[name=viewport]");
+      metaViewport.setAttribute("content", "width=1024");
+
+      // Aggiungi ulteriori logiche JavaScript qui se necessario
+    });
+</script>
 	</body>
 	</html>
