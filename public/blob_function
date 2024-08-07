@@ -1,0 +1,16 @@
+import { getDeployStore } from "@netlify/blobs";
+
+export const onPostBuild = async () => {
+  // Creazione dello store "construction" e impostazione del valore "nails"
+  const construction = getDeployStore("construction");
+  await construction.set("nails", "For general carpentry");
+
+  // Creazione dello store "beauty" e impostazione del valore "nails" con metadati
+  const beauty = getDeployStore("beauty");
+  await beauty.set("nails", "For formal events", {
+    metadata: { material: "acrylic", sale: true },
+  });
+
+  // Log di conferma
+  console.log("Nail blobs set for this deploy in Construction and Beauty stores");
+};
